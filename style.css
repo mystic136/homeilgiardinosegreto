@@ -1,0 +1,238 @@
+/* --- RESET E REGOLE GENERALI --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Font puliti e moderni per un look minimalista */
+    font-family: 'Poppins', sans-serif;
+    color: #2f3e2e; /* Verde scurissimo, quasi nero, per il testo */
+    line-height: 1.8;
+    background-color: #f3f7f2; /* Bianco sporco con punta di verde (crema zen) */
+}
+
+/* Titoli eleganti ma sereni */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: #1a3c1a; /* Verde foresta profondo */
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.bg-white { background-color: #ffffff; }
+.bg-light-green { background-color: #e2ede1; } /* Verde salvia chiarissimo */
+.text-white { color: #ffffff; }
+
+/* --- NAVBAR (Header) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: #ffffff;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.03); /* Ombra quasi invisibile */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1a3c1a;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #4a634a; /* Verde grigiastro medio */
+    margin: 0 1.2rem;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover { color: #1a3c1a; }
+
+/* Pulsante "Prenota" in stile Zen */
+.btn-nav {
+    background: #567d56; /* Verde muschio */
+    color: #ffffff !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 20px; /* Bordi molto arrotondati */
+    font-weight: 500;
+}
+.btn-nav:hover { background: #436143; }
+
+/* --- HERO SECTION (Copertina) --- */
+/* --- HERO SECTION (Copertina) Aggiornata --- */
+.hero {
+    /* Sostituisci 'URL_DELLA_TUA_IMMAGINE.jpg' con il percorso reale della nuova immagine */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), 
+                url('https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/716211172_2467400940354843_8598589374072855037_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_Sf6MAx-Xb0Q7kNvwGdrsrJ&_nc_oc=AdrbrosDP3eZrQXkUmoxFZUpasnfQH49NEQUa1BZ9oe_9NqMhF1P-lIDYPiI0Mn4Ou4&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=kNDUQZXO8NSm9lvDbLHGww&_nc_ss=7b2a8&oh=00_Af8RJKOZFBjLtkiGaXDwuVm5V69O0M3tNinoLBEloI72ZQ&oe=6A27B60C') no-repeat center center/cover;
+    height: 85vh; /* Leggermente più alta per mostrare più giardino */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Testo chiaro */
+    padding: 0 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Ombra leggera per la leggibilità */
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* Pulsante principale grande */
+.btn-main {
+    text-decoration: none;
+    background: #ffffff;
+    color: #1a3c1a;
+    padding: 1rem 2.5rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* --- SEZIONE BENVENUTI --- */
+.welcome-section h2 { margin-bottom: 0.5rem; }
+.subtitle {
+    font-size: 1.2rem;
+    color: #567d56;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+.description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #4a634a;
+}
+
+/* --- GRIGLIA SERVIZI --- */
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Ombra molto morbida */
+    border: 1px solid #e2ede1; /* Bordo sottile verde salvia */
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+
+.card h3 {
+    color: #1a3c1a;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p { color: #567d56; font-size: 0.95rem; }
+
+/* --- MAPPA --- */
+.map-container {
+    margin-top: 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 4px solid #ffffff; /* Cornice bianca spessa */
+}
+
+/* --- SEZIONE CONTATTI --- */
+.bg-dark-green { background-color: #1a3c1a; } /* Verde foresta profondo */
+
+.contact-section h2 { color: #ffffff; }
+.contact-section p { color: #e2ede1; margin-bottom: 2.5rem; }
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-actions a {
+    text-decoration: none;
+    padding: 1.1rem 2.2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-whatsapp {
+    background: #25D366; /* Colore originale WhatsApp */
+    color: #ffffff;
+}
+.btn-whatsapp:hover { background: #1da851; transform: scale(1.03); }
+
+.btn-email {
+    background: #ffffff;
+    color: #1a3c1a;
+}
+.btn-email:hover { background: #e2ede1; transform: scale(1.03); }
+
+/* --- FOOTER --- */
+footer {
+    background: #112a11; /* Verde scurissimo quasi nero per il fondo */
+    color: #a3b18a;
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #2f3e2e;
+}
+
+/* --- RESPONSIVE ADAPTATIONS --- */
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 3rem; }
+    .navbar { padding: 1rem 2rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Nasconde menu su mobile per semplicità */
+    .hero { height: 60vh; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.1rem; }
+    h2 { font-size: 2.2rem; }
+    .container { padding: 3rem 1.5rem; }
+    .contact-actions { flex-direction: column; gap: 1rem; }
+}
