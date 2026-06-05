@@ -1,3 +1,4 @@
+/* --- RESET E REGOLE GENERALI --- */
 * {
     margin: 0;
     padding: 0;
@@ -35,6 +36,7 @@ h2 {
 .text-white { color: #ffffff; }
 .bg-dark-green { background-color: #1a3c1a !important; }
 
+/* --- NAVBAR (Stile base Desktop) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -53,6 +55,18 @@ h2 {
     font-weight: bold;
     color: #1a3c1a;
     white-space: nowrap;
+}
+
+/* Pulsante Burger (Nascosto di base su PC) */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #1a3c1a;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
 }
 
 .nav-links {
@@ -87,6 +101,7 @@ h2 {
 }
 .btn-nav:hover { background: #436143; }
 
+/* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), 
                 url('https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/716211172_2467400940354843_8598589374072855037_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_Sf6MAx-Xb0Q7kNvwGdrsrJ&_nc_oc=AdrbrosDP3eZrQXkUmoxFZUpasnfQH49NEQUa1BZ9oe_9NqMhF1P-lIDYPiI0Mn4Ou4&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=kNDUQZXO8NSm9lvDbLHGww&_nc_ss=7b2a8&oh=00_Af8RJKOZFBjLtkiGaXDwuVm5V69O0M3tNinoLBEloI72ZQ&oe=6A27B60C') no-repeat center center/cover;
@@ -127,6 +142,7 @@ h2 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+/* --- SEZIONE BENVENUTI --- */
 .subtitle {
     font-size: 1.1rem;
     color: #567d56;
@@ -140,6 +156,7 @@ h2 {
     color: #4a634a;
 }
 
+/* --- GRIGLIA SERVIZI --- */
 .grid-services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -164,6 +181,7 @@ h2 {
 }
 .card p { color: #567d56; font-size: 0.95rem; }
 
+/* --- MAPPA --- */
 .map-container {
     margin-top: 2rem;
     border-radius: 12px;
@@ -172,16 +190,13 @@ h2 {
     border: 4px solid #ffffff; 
 }
 
-#prenota {
-    padding: 5rem 0;
-}
-
+/* --- SEZIONE CONTATTI IN FONDO --- */
+#prenota { padding: 5rem 0; }
 #prenota h2 { 
     color: #ffffff !important; 
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
 }
-
 .contact-subtitle { 
     color: #e2ede1; 
     max-width: 800px;
@@ -189,14 +204,12 @@ h2 {
     font-size: 1.2rem;
     line-height: 1.6;
 }
-
 .contact-actions {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
-
 .contact-actions a {
     display: inline-flex;
     align-items: center;
@@ -209,29 +222,11 @@ h2 {
     font-size: 1.1rem;
     transition: background 0.3s, transform 0.2s;
 }
-
-.contact-actions a i {
-    font-size: 1.4rem;
-    line-height: 1;
-}
-
-.btn-whatsapp {
-    background: #25D366; 
-    color: #ffffff;
-}
-.btn-whatsapp:hover { 
-    background: #1da851; 
-    transform: translateY(-2px); 
-}
-
-.btn-email {
-    background: #ffffff;
-    color: #1a3c1a;
-}
-.btn-email:hover { 
-    background: #e2ede1; 
-    transform: translateY(-2px); 
-}
+.contact-actions a i { font-size: 1.4rem; line-height: 1; }
+.btn-whatsapp { background: #25D366; color: #ffffff; }
+.btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+.btn-email { background: #ffffff; color: #1a3c1a; }
+.btn-email:hover { background: #e2ede1; transform: translateY(-2px); }
 
 /* --- FOOTER --- */
 footer {
@@ -243,6 +238,7 @@ footer {
     border-top: 1px solid #2f3e2e;
 }
 
+/* --- WIDGET FLOTTANTE IN VERDE --- */
 .floating-contact-widget {
     position: fixed;
     bottom: 30px;       
@@ -259,14 +255,7 @@ footer {
     padding: 0.4rem;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-
-.floating-contact-widget:hover {
-    transform: translateY(-5px);
-    background: rgba(26, 60, 26, 0.98); 
-}
-
-
+.floating-contact-widget:hover { transform: translateY(-5px); background: rgba(26, 60, 26, 0.98); }
 .widget-row {
     display: flex;
     align-items: center;
@@ -281,11 +270,7 @@ footer {
     border-radius: 12px;
     transition: background 0.2s ease;
 }
-
-.widget-row:hover {
-    background: rgba(255, 255, 255, 0.1); 
-}
-
+.widget-row:hover { background: rgba(255, 255, 255, 0.1); }
 .widget-icon-box {
     display: flex;
     align-items: center;
@@ -295,111 +280,84 @@ footer {
     border-radius: 10px;
     font-size: 0.9rem;
 }
+.tel-color { background-color: #ffffff; color: #1a3c1a; }
+.email-color { background-color: #e2ede1; color: #1a3c1a; }
+.widget-divider { height: 1px; background: rgba(255, 255, 255, 0.15); margin: 0.2rem 0.6rem; }
 
-.tel-color {
-    background-color: #ffffff;
-    color: #1a3c1a;
-}
-
-.email-color {
-    background-color: #e2ede1;
-    color: #1a3c1a;
-}
-
-.widget-divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.15); 
-    margin: 0.2rem 0.6rem;
-}
-
-@media (max-width: 480px) {
-    .floating-contact-widget {
-        bottom: 20px;
-        right: 20px;
-        padding: 0.3rem;
-    }
-    .widget-row {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    .widget-icon-box {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-contact-widget {
-        bottom: 20px;
-        right: 20px;
-        padding: 0.3rem;
-    }
-    .widget-row {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    .widget-icon-box {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
+/* ==========================================================================
+   📱 COMPORTAMENTO ESCLUSIVO PER TELEFONI E IPAD (Fino a 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
     .navbar {
-        padding: 0.8rem 1.2rem;
+        padding: 0.8rem 1.5rem;
     }
-    
+
     .navbar .logo {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
     }
 
-    .nav-links { 
-        display: none;
-    } 
+    /* Mostra il pulsante burger a tre lineette */
+    .burger-menu {
+        display: block;
+    }
 
+    /* Trasforma i link in una tendina a scomparsa verticale sotto la Navbar */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 100%; /* Si posiziona esattamente sotto la navbar */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        padding: 0;
+        margin: 0;
+        max-height: 0; /* Chiuso di default */
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+
+    /* Classe attivata via JavaScript per mostrare la tendina */
+    .nav-links.active {
+        max-height: 300px; /* Si espande mostrando le voci */
+        padding: 1.5rem 0;
+        border-top: 1px solid #f0f5f0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.8rem 2rem;
+        margin: 0;
+        width: 100%;
+        font-size: 1.05rem;
+        font-weight: 500;
+    }
+
+    /* Il tasto prenota rimane fisso in alto a destra, imperturbato */
     .btn-nav {
-        padding: 0.4rem 1rem;
+        padding: 0.5rem 1.1rem;
         font-size: 0.85rem;
     }
 
-    .hero { 
-        height: 70vh; 
-    }
-    .hero-content h1 { 
-        font-size: 2rem; 
-    }
-    .hero-content p { 
-        font-size: 1rem; 
-        margin-bottom: 1.8rem;
-    }
-    
-    #prenota h2 {
-        font-size: 2.2rem;
-    }
-    .contact-subtitle {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-    
-    .contact-actions { 
-        flex-direction: column; 
-        gap: 1.2rem; 
-        padding: 0 1.5rem;
-    }
-    .contact-actions a {
-        width: 100%; 
-    }
+    /* Ottimizzazioni per sezioni interne su schermi touch */
+    .hero { height: 65vh; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.1rem; margin-bottom: 1.8rem; }
+    #prenota h2 { font-size: 2.2rem; }
+    .contact-subtitle { font-size: 1rem; padding: 0 1rem; }
+    .contact-actions { flex-direction: column; gap: 1.2rem; padding: 0 1.5rem; }
+    .contact-actions a { width: 100%; }
 }
 
 @media (max-width: 480px) {
-    .floating-contact-widget {
-        bottom: 15px;
-        right: 15px;
-    }
-    .widget-row {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-    }
+    .floating-contact-widget { bottom: 20px; right: 20px; padding: 0.3rem; }
+    .widget-row { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
+    .widget-icon-box { width: 28px; height: 28px; font-size: 0.8rem; }
 }
