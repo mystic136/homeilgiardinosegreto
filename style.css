@@ -36,7 +36,7 @@ h2 {
 .text-white { color: #ffffff; }
 .bg-dark-green { background-color: #1a3c1a !important; }
 
-/* --- NAVBAR (Stile base Desktop) --- */
+/* --- NAVBAR DESKTOP --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -57,7 +57,6 @@ h2 {
     white-space: nowrap;
 }
 
-/* Pulsante Burger (Nascosto di base su PC) */
 .burger-menu {
     display: none;
     background: none;
@@ -142,7 +141,7 @@ h2 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* --- SEZIONE BENVENUTI --- */
+/* --- PRESENTAZIONE --- */
 .subtitle {
     font-size: 1.1rem;
     color: #567d56;
@@ -156,7 +155,7 @@ h2 {
     color: #4a634a;
 }
 
-/* --- GRIGLIA SERVIZI --- */
+/* --- SERVIZI --- */
 .grid-services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -190,7 +189,84 @@ h2 {
     border: 4px solid #ffffff; 
 }
 
-/* --- SEZIONE CONTATTI IN FONDO --- */
+/* --- SEZIONE LINKTREE & QR CODE --- */
+.linktree-section {
+    background-color: #f3f7f2; 
+    padding: 5rem 1.5rem;
+    border-top: 1px solid rgba(26, 60, 26, 0.05);
+}
+
+.linktree-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+.qr-box {
+    text-align: center;
+    background: #ffffff; 
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(26, 60, 26, 0.08);
+    box-shadow: 0 4px 15px rgba(26, 60, 26, 0.03);
+    flex-shrink: 0;
+}
+
+.qr-image {
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 0 auto 0.8rem auto;
+}
+
+.qr-caption {
+    font-size: 0.75rem;
+    color: #567d56;
+    font-weight: 600;
+    margin: 0;
+}
+
+.linktree-text-box {
+    max-width: 500px;
+}
+
+.linktree-text-box h3 {
+    color: #1a3c1a;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+.linktree-text-box p {
+    color: #4a634a;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.btn-linktree {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    background: linear-gradient(135deg, #1a3c1a, #345c34);
+    color: #ffffff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(26, 60, 26, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-linktree:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 60, 26, 0.25);
+}
+
+/* --- SEZIONE PRENOTA --- */
 #prenota { padding: 5rem 0; }
 #prenota h2 { 
     color: #ffffff !important; 
@@ -238,7 +314,7 @@ footer {
     border-top: 1px solid #2f3e2e;
 }
 
-/* --- WIDGET FLOTTANTE IN VERDE --- */
+/* --- WIDGET FLOTTANTE VERDE --- */
 .floating-contact-widget {
     position: fixed;
     bottom: 30px;       
@@ -285,71 +361,52 @@ footer {
 .widget-divider { height: 1px; background: rgba(255, 255, 255, 0.15); margin: 0.2rem 0.6rem; }
 
 /* ==========================================================================
-   📱 COMPORTAMENTO ESCLUSIVO PER TELEFONI E IPAD (Fino a 1024px)
+   📱 ADATTAMENTO RESPONSIVE: MOBILES & IPADS (Fino a 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
-    .navbar {
-        padding: 0.8rem 1.5rem;
-    }
+    .navbar { padding: 0.8rem 1.5rem; }
+    .navbar .logo { font-size: 1.2rem; margin-left: 0.5rem; }
+    .burger-menu { display: block; }
 
-    .navbar .logo {
-        font-size: 1.2rem;
-        margin-left: 0.5rem;
-    }
-
-    /* Mostra il pulsante burger a tre lineette */
-    .burger-menu {
-        display: block;
-    }
-
-    /* Trasforma i link in una tendina a scomparsa verticale sotto la Navbar */
+    /* Menu a tendina verticale per mobile/tablet */
     .nav-links {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
-        top: 100%; /* Si posiziona esattamente sotto la navbar */
+        top: 100%; 
         left: 0;
         width: 100%;
         background-color: #ffffff;
         box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         padding: 0;
         margin: 0;
-        max-height: 0; /* Chiuso di default */
+        max-height: 0; 
         overflow: hidden;
         transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
     }
 
-    /* Classe attivata via JavaScript per mostrare la tendina */
     .nav-links.active {
-        max-height: 300px; /* Si espande mostrando le voci */
+        max-height: 300px; 
         padding: 1.5rem 0;
         border-top: 1px solid #f0f5f0;
     }
 
-    .nav-links li {
-        width: 100%;
-    }
+    .nav-links li { width: 100%; }
+    .nav-links li a { display: block; padding: 0.8rem 2rem; margin: 0; width: 100%; font-size: 1.05rem; font-weight: 500; }
+    
+    /* Il tasto prenota rimane visibile fuori dal burger menu */
+    .btn-nav { padding: 0.5rem 1.1rem; font-size: 0.85rem; }
 
-    .nav-links li a {
-        display: block;
-        padding: 0.8rem 2rem;
-        margin: 0;
-        width: 100%;
-        font-size: 1.05rem;
-        font-weight: 500;
-    }
-
-    /* Il tasto prenota rimane fisso in alto a destra, imperturbato */
-    .btn-nav {
-        padding: 0.5rem 1.1rem;
-        font-size: 0.85rem;
-    }
-
-    /* Ottimizzazioni per sezioni interne su schermi touch */
+    /* Ottimizzazioni layout */
     .hero { height: 65vh; }
     .hero-content h1 { font-size: 2.2rem; }
     .hero-content p { font-size: 1.1rem; margin-bottom: 1.8rem; }
+    
+    .linktree-container { flex-direction: column; gap: 2rem; text-align: center; }
+    .linktree-text-box h3 { text-align: center; }
+    .btn-linktree { width: 100%; justify-content: center; }
+
     #prenota h2 { font-size: 2.2rem; }
     .contact-subtitle { font-size: 1rem; padding: 0 1rem; }
     .contact-actions { flex-direction: column; gap: 1.2rem; padding: 0 1.5rem; }

@@ -6,32 +6,39 @@
     <title>B&B Home: Il Giardino Segreto</title>
     <link rel="stylesheet" href="style.css">
     
+    <!-- Font eleganti -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..700;1,400..700&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
     
+    <!-- Icone FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
+    <!-- NAVIGAZIONE -->
     <nav class="navbar">
+        <!-- Bottone Burger (Visibile SOLO su Mobile/Tablet) -->
         <button class="burger-menu" id="burgerToggle" aria-label="Apri menu">
             <i class="fas fa-bars"></i>
         </button>
 
         <div class="logo">Il Giardino Segreto</div>
         
+        <!-- Menu Link (Su Desktop è in linea, su Mobile diventa a tendina) -->
         <ul class="nav-links" id="navLinks">
             <li><a href="#struttura">La Struttura</a></li>
             <li><a href="#servizi">Servizi</a></li>
             <li><a href="#dove-siamo">Dove Siamo</a></li>
         </ul>
 
+        <!-- Tasto Prenota (Sempre visibile all'esterno su qualsiasi dispositivo) -->
         <div class="nav-actions">
             <a href="#prenota" class="btn-nav">Prenota</a>
         </div>
     </nav>
 
+    <!-- COPERTINA (HERO SECTION) -->
     <header class="hero">
         <div class="hero-content">
             <h1>Un'oasi di relax nel cuore di Palermo</h1>
@@ -40,6 +47,7 @@
         </div>
     </header>
 
+    <!-- PRESENTAZIONE -->
     <section id="struttura" class="container text-center">
         <h2>Benvenuti a "Home Il Giardino Segreto"</h2>
         <p class="subtitle">La tua casa lontano da casa a Palermo</p>
@@ -48,6 +56,7 @@
         </p>
     </section>
 
+    <!-- SERVIZI / CARATTERISTICHE -->
     <section id="servizi" class="bg-light-green">
         <div class="container">
             <h2 class="text-center">Cosa Offriamo</h2>
@@ -64,6 +73,7 @@
         </div>
     </section>
 
+    <!-- DOVE SIAMO -->
     <section id="dove-siamo" class="container">
         <h2 class="text-center">Dove Trovarci</h2>
         <p class="text-center">Ci troviamo in <strong>Via Venanzio Marvuglia, 8 - 90142 Palermo, Italia</strong></p>
@@ -80,6 +90,27 @@
         </div>
     </section>
 
+    <!-- SEZIONE LINKTREE & QR CODE -->
+    <section class="linktree-section">
+        <div class="linktree-container">
+            <!-- Colonna QR Code -->
+            <div class="qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://linktr.ee/homeilgiardinosegreto" alt="QR Code B&B Il Giardino Segreto" class="qr-image" loading="lazy">
+                <p class="qr-caption">Scansiona per salvare i nostri link</p>
+            </div>
+            
+            <!-- Colonna Testo e Bottone -->
+            <div class="linktree-text-box">
+                <h3>Tutti i nostri canali in un unico posto</h3>
+                <p>Scansiona il QR Code con la fotocamera del tuo smartphone oppure clicca sul pulsante qui sotto per accedere al nostro Linktree ufficiale, dove troverai social e info utili.</p>
+                <a href="https://linktr.ee/homeilgiardinosegreto" target="_blank" class="btn-linktree">
+                    <i class="fas fa-link"></i> Visita il nostro Linktree
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATTI / PRENOTAZIONI -->
     <section id="prenota" class="bg-dark-green text-white text-center">
         <div class="container">
             <h2>Vuoi soggiornare da noi?</h2>
@@ -98,16 +129,18 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 B&B Il Giardino Segreto - Via Venanzio Marvuglia 8, 90142 Palermo. Tutti i diritti riservati.</p>
     </footer>
 
+    <!-- WIDGET CONTATTI FLOTTANTE -->
     <div class="floating-contact-widget">
         <a href="tel:+393203892054" class="widget-row">
             <div class="widget-icon-box tel-color">
                 <i class="fas fa-phone-alt"></i>
             </div>
-            <span>320 3892054</span>
+            <span>3203892054</span>
         </a>
         <div class="widget-divider"></div>
         <a href="mailto:homeilgiardinosegreto@gmail.com" class="widget-row">
@@ -118,15 +151,15 @@
         </a>
     </div>
 
+    <!-- SCRIPT INTERATTIVI E SICUREZZA -->
     <script>
-        // Logica di apertura/chiusura Burger Menu
+        // Logica Apertura/Chiusura Burger Menu
         const burgerToggle = document.getElementById('burgerToggle');
         const navLinks = document.getElementById('navLinks');
         const burgerIcon = burgerToggle.querySelector('i');
 
         burgerToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Cambia l'icona da "barre" a "X" quando è aperto
             if (navLinks.classList.contains('active')) {
                 burgerIcon.classList.remove('fa-bars');
                 burgerIcon.classList.add('fa-times');
@@ -136,7 +169,7 @@
             }
         });
 
-        // Chiude il menu automaticamente quando l'utente clicca un link
+        // Chiude il menu quando si clicca una voce (comodo per navigazione interna)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -145,7 +178,7 @@
             });
         });
 
-        // --- PROTEZIONE CODICE ---
+        // Protezione Codice (Blocco tasto destro e scorciatoie ispeziona)
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', event => {
             if (
