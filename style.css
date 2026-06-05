@@ -1,8 +1,6 @@
 /* --- RESET E REGOLE GENERALI --- */
 html {
     scroll-behavior: smooth; /* Rende lo scorrimento morbido */
-    
-    /* AGGIUNGI QUESTA RIGA: */
     scroll-padding-top: 12vh; /* Sposta il punto di arresto dello scroll verso il basso */
 }
 * {
@@ -55,14 +53,21 @@ h2 {
     z-index: 1000;
 }
 
+/* MODIFICATO: Font stile Zen, Elegante e con respiro spaziale */
 .navbar .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-family: 'Cinzel', serif; /* Carattere d'ispirazione zen ed elegantissimo */
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 2px; /* Spaziatura ampia per un effetto premium e rilassante */
     color: #1a3c1a;
+    text-transform: uppercase; /* Rende il testo scultoreo e pulito */
     white-space: nowrap;
-    text-decoration: none; /* Rimuove la sottolineatura del link */
+    text-decoration: none; 
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navbar .logo:hover {
+    color: #567d56;
 }
 
 .burger-menu {
@@ -93,8 +98,8 @@ h2 {
     transition: color 0.3s;
     position: relative;
     padding-bottom: 4px;
-    display: inline-block; /* Impedisce alla linea di allargarsi a tutto schermo */
-    width: max-content;    /* Forza il link a seguire solo la larghezza del testo */
+    display: inline-block; 
+    width: max-content;    
 }
 
 .nav-links li a:hover { color: #1a3c1a; }
@@ -115,7 +120,6 @@ h2 {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
 }
 
-/* Attivazione linea su PC (hover) e su Mobile (active) */
 .nav-links li a:hover::after,
 .nav-links li a:active::after {
     transform: scaleX(1);
@@ -135,8 +139,6 @@ h2 {
     white-space: nowrap;
 }
 .btn-nav:hover { background: #436143; }
-
-/* HERO SECTION, PRESENTAZIONE, SERVIZI, MAPPA, LINKTREE, PRENOTA, FOOTER E WIDGET RIMANGONO IDENTICI */
 
 /* --- HERO SECTION --- */
 .hero {
@@ -403,10 +405,10 @@ footer {
    ========================================================================== */
 @media (max-width: 1024px) {
     .navbar { padding: 0.8rem 1.5rem; }
-    .navbar .logo { font-size: 1.2rem; margin-left: 0.5rem; }
+    /* Modificata la dimensione logo mobile per assecondare il font più arioso */
+    .navbar .logo { font-size: 1.1rem; margin-left: 0.2rem; letter-spacing: 1px; }
     .burger-menu { display: block; }
 
-    /* Menu a tendina verticale per mobile/tablet */
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -433,10 +435,9 @@ footer {
     .nav-links li { 
         width: 100%; 
         display: flex;
-        justify-content: center; /* Mantiene i link mobile centrati e ordinati */
+        justify-content: center; 
     }
     
-    /* Modificato inline-block per far combaciare la linea alla parola nel burger menu */
     .nav-links li a { 
         display: inline-block; 
         padding: 0.8rem 2rem; 
@@ -478,22 +479,17 @@ footer {
     align-items: center;
 }
 
-/* Contenitore principale delle foto con doppia cornice di design */
 .slider-container {
     width: 100%;
-    height: 450px; /* Altezza dello slider su PC */
+    height: 450px; 
     border-radius: 16px;
     overflow: hidden;
     background: #ffffff;
-    
-    /* Cornice Esterna Bianca Elegante */
     border: 8px solid #ffffff; 
-    /* Ombra morbida per dare profondità */
     box-shadow: 0 15px 35px rgba(26, 60, 26, 0.12); 
     position: relative;
 }
 
-/* Singola foto dentro lo slider */
 .slider-item {
     position: absolute;
     top: 0;
@@ -505,7 +501,6 @@ footer {
     z-index: 1;
 }
 
-/* Quando la foto è attiva viene mostrata */
 .slider-item.active {
     opacity: 1;
     z-index: 2;
@@ -516,14 +511,11 @@ footer {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 10px; /* Arrotonda l'immagine dentro la cornice */
-    
-    /* Cornice Interna Sottile Verde Scuro */
+    border-radius: 10px; 
     outline: 2px solid rgba(26, 60, 26, 0.15);
     outline-offset: -10px;
 }
 
-/* Pulsanti Avanti e Indietro */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -549,12 +541,11 @@ footer {
     color: #ffffff;
 }
 
-.prev-btn { left: -22px; } /* Fa sporgere leggermente il tasto a sinistra */
-.next-btn { right: -22px; } /* Fa sporgere leggermente il tasto a destra */
+.prev-btn { left: -22px; } 
+.next-btn { right: -22px; } 
 
 .slider-btn:active { transform: translateY(-50%) scale(0.9); }
 
-/* Puntini di navigazione in basso */
 .slider-dots {
     display: flex;
     justify-content: center;
@@ -576,7 +567,6 @@ footer {
     transform: scale(1.2);
 }
 
-/* Ottimizzazione Mobile */
 @media (max-width: 768px) {
     .slider-container { height: 300px; border: 6px solid #ffffff; }
     .slider-btn { width: 38px; height: 38px; font-size: 0.9rem; }
