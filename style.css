@@ -1,6 +1,9 @@
 /* --- RESET E REGOLE GENERALI --- */
 html {
-    scroll-behavior: smooth; /* Rende lo scorrimento verso l'alto morbido e fluido */
+    scroll-behavior: smooth; /* Rende lo scorrimento morbido */
+    
+    /* AGGIUNGI QUESTA RIGA: */
+    scroll-padding-top: 12vh; /* Sposta il punto di arresto dello scroll verso il basso */
 }
 * {
     margin: 0;
