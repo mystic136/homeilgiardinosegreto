@@ -1,4 +1,3 @@
-/* --- RESET E REGOLE GENERALI --- */
 * {
     margin: 0;
     padding: 0;
@@ -30,14 +29,12 @@ h2 {
     padding: 5rem 1.5rem;
 }
 
-/* Classi di utilità */
 .text-center { text-align: center; }
 .bg-white { background-color: #ffffff; }
 .bg-light-green { background-color: #e2ede1; } 
 .text-white { color: #ffffff; }
 .bg-dark-green { background-color: #1a3c1a !important; }
 
-/* --- NAVBAR (Header Desktop) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -62,8 +59,8 @@ h2 {
     display: flex;
     list-style: none;
     align-items: center;
-    margin-left: auto; /* Spinge i link del menu tutto a destra */
-    margin-right: 1.5rem; /* Crea spazio ordinato prima del tasto prenota */
+    margin-left: auto; 
+    margin-right: 1.5rem; 
 }
 
 .nav-links li a {
@@ -90,7 +87,6 @@ h2 {
 }
 .btn-nav:hover { background: #436143; }
 
-/* --- HERO SECTION (Copertina) --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), 
                 url('https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/716211172_2467400940354843_8598589374072855037_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_Sf6MAx-Xb0Q7kNvwGdrsrJ&_nc_oc=AdrbrosDP3eZrQXkUmoxFZUpasnfQH49NEQUa1BZ9oe_9NqMhF1P-lIDYPiI0Mn4Ou4&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=kNDUQZXO8NSm9lvDbLHGww&_nc_ss=7b2a8&oh=00_Af8RJKOZFBjLtkiGaXDwuVm5V69O0M3tNinoLBEloI72ZQ&oe=6A27B60C') no-repeat center center/cover;
@@ -131,7 +127,6 @@ h2 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* --- SEZIONE BENVENUTI --- */
 .subtitle {
     font-size: 1.1rem;
     color: #567d56;
@@ -145,7 +140,6 @@ h2 {
     color: #4a634a;
 }
 
-/* --- GRIGLIA SERVIZI --- */
 .grid-services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -170,7 +164,6 @@ h2 {
 }
 .card p { color: #567d56; font-size: 0.95rem; }
 
-/* --- MAPPA --- */
 .map-container {
     margin-top: 2rem;
     border-radius: 12px;
@@ -179,7 +172,6 @@ h2 {
     border: 4px solid #ffffff; 
 }
 
-/* --- SEZIONE CONTATTI IN FONDO (Come da screenshot) --- */
 #prenota {
     padding: 5rem 0;
 }
@@ -251,7 +243,6 @@ footer {
     border-top: 1px solid #2f3e2e;
 }
 
-/* --- WIDGET FLOTTANTE MODERNO IN VERDE (PC & MOBILE) --- */
 .floating-contact-widget {
     position: fixed;
     bottom: 30px;       
@@ -259,30 +250,30 @@ footer {
     z-index: 9999;      
     display: flex;
     flex-direction: column;
-    background: rgba(26, 60, 26, 0.92); /* Sfondo Verde Foresta Profondo con leggera trasparenza */
-    backdrop-filter: blur(10px);         /* Effetto vetro satinato scuro */
+    background: rgba(26, 60, 26, 0.92); 
+    backdrop-filter: blur(10px);         
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(226, 237, 225, 0.2); /* Bordino sottile verde salvia semi-trasparente */
-    border-radius: 16px;                 /* Angoli arrotondati moderni */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Ombra più marcata per far risaltare il verde scuro */
+    border: 1px solid rgba(226, 237, 225, 0.2); 
+    border-radius: 16px;                 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
     padding: 0.4rem;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Effetto micro-movimento al passaggio del mouse */
+
 .floating-contact-widget:hover {
     transform: translateY(-5px);
-    background: rgba(26, 60, 26, 0.98); /* Diventa quasi totalmente opaco al passaggio del mouse */
+    background: rgba(26, 60, 26, 0.98); 
 }
 
-/* Stile delle righe cliccabili */
+
 .widget-row {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     text-decoration: none;
     padding: 0.6rem 1rem;
-    color: #ffffff; /* Testo interamente bianco per massima leggibilità sul verde */
+    color: #ffffff; 
     font-size: 0.9rem;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
@@ -291,12 +282,10 @@ footer {
     transition: background 0.2s ease;
 }
 
-/* Evidenziazione delicata al passaggio del mouse sulla singola riga */
 .widget-row:hover {
     background: rgba(255, 255, 255, 0.1); 
 }
 
-/* I piccoli cerchietti che contengono le icone */
 .widget-icon-box {
     display: flex;
     align-items: center;
@@ -307,26 +296,22 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Icona telefono: box bianco puro, icona interna in verde foresta scuro */
 .tel-color {
     background-color: #ffffff;
     color: #1a3c1a;
 }
 
-/* Icona email: box in verde salvia (della pagina), icona interna in verde foresta */
 .email-color {
     background-color: #e2ede1;
     color: #1a3c1a;
 }
 
-/* Sottile linea di divisione interna */
 .widget-divider {
     height: 1px;
-    background: rgba(255, 255, 255, 0.15); /* Linea chiara e discreta per separare i contatti */
+    background: rgba(255, 255, 255, 0.15); 
     margin: 0.2rem 0.6rem;
 }
 
-/* --- ADATTAMENTO MOBILE --- */
 @media (max-width: 480px) {
     .floating-contact-widget {
         bottom: 20px;
@@ -344,7 +329,6 @@ footer {
     }
 }
 
-/* --- ADATTAMENTO MOBILE (In fondo al foglio CSS o sovrascrivi quello esistente) --- */
 @media (max-width: 480px) {
     .floating-contact-widget {
         bottom: 20px;
@@ -362,7 +346,6 @@ footer {
     }
 }
 
-/* --- REGOLE SPECIFICHE PER DISPOSITIVI MOBILE --- */
 @media (max-width: 768px) {
     .navbar {
         padding: 0.8rem 1.2rem;
@@ -373,7 +356,7 @@ footer {
     }
 
     .nav-links { 
-        display: none; /* Nasconde i link testuali della navbar solo su mobile per non accavallarsi */
+        display: none;
     } 
 
     .btn-nav {
