@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..700;1,400..700&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:ital,wght=0,400..700;1,400..700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -95,7 +95,7 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
         
         <div class="map-container">
             <iframe 
-                src="https://maps.google.com/maps?q=Via%20Venanzio%20Marvuglia%208,%20Palermo&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.229239556555!2d13.36365447661556!3d38.13451109117079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e602ecb1235b%3A0xc6cb1c4961726da3!2sVia%20Venanzio%20Marvuglia%2C%208%2C%2090142%20Palermo%20PA!5e0!3m2!1sit!2sit!4v1717610000000!5m2!1sit!2sit" 
                 width="100%" 
                 height="450" 
                 style="border:0;" 
@@ -198,7 +198,7 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
             }
         });
 
-        // Chiude il menu quando si clicca una voce (comodo per navigazione interna)
+        // Chiude il menu quando si clicca una voce
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -207,7 +207,7 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
             });
         });
 
-        // 2. Logica Slider Galleria Interattiva (AGGIUNTA E FUNZIONANTE)
+        // 2. Logica Slider Galleria Interattiva
         const slides = document.querySelectorAll('.slider-item');
         const dots = document.querySelectorAll('.slider-dots .dot');
         const prevBtn = document.getElementById('prevBtn');
@@ -215,11 +215,9 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
         let currentSlide = 0;
 
         function showSlide(index) {
-            // Rimuove lo stato attivo da tutte le immagini e puntini
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
             
-            // Gestione del ciclo infinito (torna all'inizio o va alla fine)
             if (index >= slides.length) {
                 currentSlide = 0;
             } else if (index < 0) {
@@ -228,14 +226,12 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
                 currentSlide = index;
             }
 
-            // Attiva la foto e il puntino corrente
             slides[currentSlide].classList.add('active');
             if (dots[currentSlide]) {
                 dots[currentSlide].classList.add('active');
             }
         }
 
-        // Eventi pulsanti Avanti / Indietro
         if (nextBtn && prevBtn) {
             nextBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -248,7 +244,6 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
             });
         }
 
-        // Permette la navigazione cliccando direttamente sui puntini
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 showSlide(index);
@@ -268,6 +263,8 @@ Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da 
             }
         });
     </script>
+
+    <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
