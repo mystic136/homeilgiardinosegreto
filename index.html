@@ -6,39 +6,33 @@
     <title>Home: Il Giardino Segreto</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Font eleganti -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..700;1,400..700&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Icone FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <!-- NAVIGAZIONE -->
     <nav class="navbar">
-        <!-- Bottone Burger (Visibile SOLO su Mobile/Tablet) -->
         <button class="burger-menu" id="burgerToggle" aria-label="Apri menu">
             <i class="fas fa-bars"></i>
         </button>
 
-        <div class="logo">Il Giardino Segreto</div>
+        <a href="#" class="logo">Home Il Giardino Segreto</a>
         
-        <!-- Menu Link (Su Desktop è in linea, su Mobile diventa a tendina) -->
         <ul class="nav-links" id="navLinks">
-            <li><a href="#struttura">La Struttura</a></li>
-            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#casa">La Casa</a></li>
+            <li><a href="#galleria">Galleria</a></li>
             <li><a href="#dove-siamo">Dove Siamo</a></li>
+            <li><a href="#scopri-palermo">Scopri Palermo</a></li>
         </ul>
 
-        <!-- Tasto Prenota (Sempre visibile all'esterno su qualsiasi dispositivo) -->
         <div class="nav-actions">
             <a href="#prenota" class="btn-nav">Prenota</a>
         </div>
     </nav>
 
-    <!-- COPERTINA (HERO SECTION) -->
     <header class="hero">
         <div class="hero-content">
             <h1>Un'oasi di relax nel cuore di Palermo</h1>
@@ -47,33 +41,54 @@
         </div>
     </header>
 
-    <!-- PRESENTAZIONE -->
-    <section id="struttura" class="container text-center">
+    <section id="casa" class="container text-center">
         <h2>Benvenuti a "Home Il Giardino Segreto"</h2>
-        <p class="subtitle">La tua casa a Palermo</p>
+        <p class="subtitle">Il tuo angolo di paradiso in città</p>
         <p class="description">
-            Il punto di partenza perfetto per scoprire i segreti, i sapori e la bellezza di Palermo. Situato in una posizione ideale per esplorare le meraviglie del capoluogo siciliano, la nostra casa vacanze unisce il comfort moderno al fascino di un angolo nascosto di pace. Perfetto per coppie, famiglie e viaggiatori che vogliono scoprire Palermo per poi rilassarsi in totale tranquillità.
+           Immagina di svegliarti con la luce del sole siciliano, preparare un caffè e gustarlo all'aperto, circondato dal verde rigoglioso di felci e anthurium, nel totale silenzio.
+Home Il Giardino Segreto non è solo un posto dove dormire, ma un'esperienza da vivere. Spazi curati, comfort moderno e un giardino privato tutto per te: il lusso della tranquillità a due passi dalla storia.
         </p>
     </section>
 
-    <!-- SERVIZI / CARATTERISTICHE -->
-    <section id="servizi" class="bg-light-green">
+    <section id="galleria" class="bg-light-green">
         <div class="container">
-            <h2 class="text-center">Cosa Offriamo</h2>
-            <div class="grid-services">
-                <div class="card">
-                    <h3>Camere Confortevoli</h3>
-                    <p>Ambienti climatizzati, arredati con gusto e dotati di ogni comfort per il tuo riposo.</p>
+            <h2 class="text-center">Galleria Fotografica</h2>
+            <p class="subtitle text-center">Scopri ogni dettaglio</p>
+            
+            <div class="slider-wrapper">
+                <button class="slider-btn prev-btn" id="prevBtn" aria-label="Foto precedente">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="slider-container" id="sliderContainer">
+                    <div class="slider-item active">
+                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1200&q=80" alt="Interno della casa vacanze">
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" alt="La camera da letto">
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Il giardino esterno">
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80" alt="Il bagno moderno">
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Wi-Fi Gratuito</h3>
-                    <p>Connessione internet veloce disponibile in tutta la struttura per lavoro o svago.</p>
-                </div>
+
+                <button class="slider-btn next-btn" id="nextBtn" aria-label="Foto successiva">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="slider-dots" id="sliderDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
     </section>
 
-    <!-- DOVE SIAMO -->
     <section id="dove-siamo" class="container">
         <h2 class="text-center">Dove Trovarci</h2>
         <p class="text-center">Ci troviamo in <strong>Via Venanzio Marvuglia, 8 - 90142 Palermo, Italia</strong></p>
@@ -90,16 +105,34 @@
         </div>
     </section>
 
-    <!-- SEZIONE LINKTREE & QR CODE -->
+    <section id="scopri-palermo" class="bg-light-green">
+        <div class="container">
+            <h2 class="text-center">Cosa fare a Palermo</h2>
+            <h3 class="text-center">Non fare il turista, vivi come noi!</h3>
+            <div class="grid-services">
+                <div class="card">
+                    <h3>I Mercati e lo Street Food</h3>
+                    <p>Perditi tra le bancarelle colorate e i profumi dei mercati storici per assaggiare panelle, crocchè e il vero cibo di strada palermitano.</p>
+                </div>
+                <div class="card">
+                    <h3>Passeggiate e Tramonti</h3>
+                    <p>Respira la brezza marina passeggiando (o magari sfrecciando sui pattini!) lungo il Foro Italico al tramonto, o rilassati sulle spiagge vicine.</p>
+                </div>
+                <div class="card">
+                    <h3>Arte e Notti Vibranti</h3>
+                    <p>Dai maestosi palazzi arabo-normanni alla scena musicale e ai locali più vissuti e suggestivi della città, dove scoprire la vera anima indie e alternativa di Palermo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="linktree-section">
         <div class="linktree-container">
-            <!-- Colonna QR Code -->
             <div class="qr-box">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://linktr.ee/homeilgiardinosegreto" alt="QR Code B&B Il Giardino Segreto" class="qr-image" loading="lazy">
                 <p class="qr-caption">Scansiona per salvare i nostri link</p>
             </div>
             
-            <!-- Colonna Testo e Bottone -->
             <div class="linktree-text-box">
                 <h3>Tutti i nostri canali in un unico posto</h3>
                 <p>Scansiona il QR Code con la fotocamera del tuo smartphone oppure clicca sul pulsante qui sotto per accedere al nostro Linktree ufficiale, dove troverai social e info utili.</p>
@@ -110,7 +143,6 @@
         </div>
     </section>
 
-    <!-- CONTATTI / PRENOTAZIONI -->
     <section id="prenota" class="bg-dark-green text-white text-center">
         <div class="container">
             <h2>Vuoi soggiornare da noi?</h2>
@@ -129,12 +161,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>© 2026 Home: Il Giardino Segreto - Via Venanzio Marvuglia 8, 90142 Palermo. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- WIDGET CONTATTI FLOTTANTE -->
     <div class="floating-contact-widget">
         <a href="tel:+393203892054" class="widget-row">
             <div class="widget-icon-box tel-color">
@@ -151,9 +181,8 @@
         </a>
     </div>
 
-    <!-- SCRIPT INTERATTIVI E SICUREZZA -->
     <script>
-        // Logica Apertura/Chiusura Burger Menu
+        // 1. Logica Apertura/Chiusura Burger Menu
         const burgerToggle = document.getElementById('burgerToggle');
         const navLinks = document.getElementById('navLinks');
         const burgerIcon = burgerToggle.querySelector('i');
@@ -178,7 +207,55 @@
             });
         });
 
-        // Protezione Codice (Blocco tasto destro e scorciatoie ispeziona)
+        // 2. Logica Slider Galleria Interattiva (AGGIUNTA E FUNZIONANTE)
+        const slides = document.querySelectorAll('.slider-item');
+        const dots = document.querySelectorAll('.slider-dots .dot');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            // Rimuove lo stato attivo da tutte le immagini e puntini
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Gestione del ciclo infinito (torna all'inizio o va alla fine)
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            // Attiva la foto e il puntino corrente
+            slides[currentSlide].classList.add('active');
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('active');
+            }
+        }
+
+        // Eventi pulsanti Avanti / Indietro
+        if (nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showSlide(currentSlide + 1);
+            });
+
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showSlide(currentSlide - 1);
+            });
+        }
+
+        // Permette la navigazione cliccando direttamente sui puntini
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // 3. Protezione Codice (Blocco tasto destro e scorciatoie ispeziona)
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', event => {
             if (

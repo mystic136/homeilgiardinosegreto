@@ -1,4 +1,7 @@
 /* --- RESET E REGOLE GENERALI --- */
+html {
+    scroll-behavior: smooth; /* Rende lo scorrimento verso l'alto morbido e fluido */
+}
 * {
     margin: 0;
     padding: 0;
@@ -55,6 +58,8 @@ h2 {
     font-weight: bold;
     color: #1a3c1a;
     white-space: nowrap;
+    text-decoration: none; /* Rimuove la sottolineatura del link */
+    cursor: pointer;
 }
 
 .burger-menu {
@@ -76,15 +81,43 @@ h2 {
     margin-right: 1.5rem; 
 }
 
+/* --- SISTEMAZIONE COLLEGAMENTI E LINEE ANIMATE --- */
 .nav-links li a {
     text-decoration: none;
     color: #4a634a; 
     margin: 0 1.2rem;
     font-size: 0.95rem;
     transition: color 0.3s;
+    position: relative;
+    padding-bottom: 4px;
+    display: inline-block; /* Impedisce alla linea di allargarsi a tutto schermo */
+    width: max-content;    /* Forza il link a seguire solo la larghezza del testo */
 }
 
 .nav-links li a:hover { color: #1a3c1a; }
+
+/* Struttura della linea bouncy sotto la parola */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;                 
+    background-color: #1a3c1a;   
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+/* Attivazione linea su PC (hover) e su Mobile (active) */
+.nav-links li a:hover::after,
+.nav-links li a:active::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
 
 .btn-nav {
     display: inline-block;
@@ -99,6 +132,8 @@ h2 {
     white-space: nowrap;
 }
 .btn-nav:hover { background: #436143; }
+
+/* HERO SECTION, PRESENTAZIONE, SERVIZI, MAPPA, LINKTREE, PRENOTA, FOOTER E WIDGET RIMANGONO IDENTICI */
 
 /* --- HERO SECTION --- */
 .hero {
@@ -392,10 +427,22 @@ footer {
         border-top: 1px solid #f0f5f0;
     }
 
-    .nav-links li { width: 100%; }
-    .nav-links li a { display: block; padding: 0.8rem 2rem; margin: 0; width: 100%; font-size: 1.05rem; font-weight: 500; }
+    .nav-links li { 
+        width: 100%; 
+        display: flex;
+        justify-content: center; /* Mantiene i link mobile centrati e ordinati */
+    }
     
-    /* Il tasto prenota rimane visibile fuori dal burger menu */
+    /* Modificato inline-block per far combaciare la linea alla parola nel burger menu */
+    .nav-links li a { 
+        display: inline-block; 
+        padding: 0.8rem 2rem; 
+        margin: 0; 
+        width: auto; 
+        font-size: 1.05rem; 
+        font-weight: 500; 
+    }
+    
     .btn-nav { padding: 0.5rem 1.1rem; font-size: 0.85rem; }
 
     /* Ottimizzazioni layout */
@@ -417,4 +464,119 @@ footer {
     .floating-contact-widget { bottom: 20px; right: 20px; padding: 0.3rem; }
     .widget-row { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
     .widget-icon-box { width: 28px; height: 28px; font-size: 0.8rem; }
+}
+
+/* --- SLIDER GALLERIA FOTOGRAFICA --- */
+.slider-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Contenitore principale delle foto con doppia cornice di design */
+.slider-container {
+    width: 100%;
+    height: 450px; /* Altezza dello slider su PC */
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    
+    /* Cornice Esterna Bianca Elegante */
+    border: 8px solid #ffffff; 
+    /* Ombra morbida per dare profondità */
+    box-shadow: 0 15px 35px rgba(26, 60, 26, 0.12); 
+    position: relative;
+}
+
+/* Singola foto dentro lo slider */
+.slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+/* Quando la foto è attiva viene mostrata */
+.slider-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px; /* Arrotonda l'immagine dentro la cornice */
+    
+    /* Cornice Interna Sottile Verde Scuro */
+    outline: 2px solid rgba(26, 60, 26, 0.15);
+    outline-offset: -10px;
+}
+
+/* Pulsanti Avanti e Indietro */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    color: #1a3c1a;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 10;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.slider-btn:hover {
+    background: #1a3c1a;
+    color: #ffffff;
+}
+
+.prev-btn { left: -22px; } /* Fa sporgere leggermente il tasto a sinistra */
+.next-btn { right: -22px; } /* Fa sporgere leggermente il tasto a destra */
+
+.slider-btn:active { transform: translateY(-50%) scale(0.9); }
+
+/* Puntini di navigazione in basso */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #c2dec1;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+    background: #1a3c1a;
+    transform: scale(1.2);
+}
+
+/* Ottimizzazione Mobile */
+@media (max-width: 768px) {
+    .slider-container { height: 300px; border: 6px solid #ffffff; }
+    .slider-btn { width: 38px; height: 38px; font-size: 0.9rem; }
+    .prev-btn { left: -10px; }
+    .next-btn { right: -10px; }
 }
